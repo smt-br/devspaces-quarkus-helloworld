@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  generateName: quarkus-helow-world
+  generateName: devspaces-quarkus-heloworld
 attributes:
   controller.devfile.io/storage-type: per-workspace
   perUserStrategyPvcConfig:
@@ -63,14 +63,14 @@ commands:
       component: tools
       commandLine: |
         source $HOME/.sdkman/bin/sdkman-init.sh && \
-        mvn -pl br.com.smanager:quarkus-helow-world quarkus:dev
+        mvn -pl br.com.smanager:devspaces-quarkus-heloworld quarkus:dev
       workingDir: ${PROJECT_SOURCE}
   - id: cleanup
     exec:
       label: "4. Clean Up"
       component: tools
       commandLine: |
-        oc delete all --selector app=quarkus-helow-world
+        oc delete all --selector app=devspaces-quarkus-heloworld
       workingDir: ${PROJECT_SOURCE}
 events:
   postStart:
